@@ -1,8 +1,19 @@
+import { IsString, MinLength, MaxLength } from "class-validator";
+
 export class UserDto {
-    readonly firstName: string;
-    readonly lastName: string;
-    readonly phone: string;
-    readonly password: string;
+  @IsString()
+  @MinLength(3)
+  @MaxLength(32)
+  readonly firstName: string;
+
+  @IsString()
+  readonly lastName: string;
+
+  @IsString()
+  readonly phone: string;
+
+  @IsString()
+  readonly password: string;
 }
 
 export class CreateUserDto extends UserDto {}

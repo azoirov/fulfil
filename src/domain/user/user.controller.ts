@@ -1,27 +1,24 @@
 import UserService from "@/domain/user/user.service";
-import {NextFunction, Request, Response} from "express";
-import {CreateUserDto} from "@/domain/user/dto/user.dto";
+import { NextFunction, Request, Response } from "express";
+import { CreateUserDto } from "@/domain/user/dto/user.dto";
+import { validation } from "@/utils/validation";
 
 class UserController {
-    public userService = new UserService();
+  public userService = new UserService();
 
-    public create = async (
-        req: Request,
-        res: Response,
-        next: NextFunction
-    ) => {
-        try {
-            const data: CreateUserDto = req.body;
+  public create = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const data: CreateUserDto = req.body;
 
-            // validation.
+      await validation(CreateUserDto, req.body);
 
-            const user = await this.userService.create(data);
+      const user = await this.userService.create(data);
 
-            res.json(user)
-        } catch (error) {
-            next(error)
-        }
+      res.json(user);
+    } catch (error) {
+      next(error);
     }
+  };
 }
 
-export default UserController
+export default UserController;
