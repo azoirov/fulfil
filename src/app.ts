@@ -3,6 +3,8 @@ import { MONGO_URI } from "@config";
 import express from "express";
 import { IRoute } from "@/interfaces/route.interface";
 import { errorResponder } from "@middlewares/error.middleware";
+import "reflect-metadata";
+import cors from "cors";
 
 class App {
   private app: express.Application;
@@ -27,6 +29,7 @@ class App {
   }
 
   public initializeMiddlewares() {
+    this.app.use(cors());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
   }

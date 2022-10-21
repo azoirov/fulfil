@@ -22,10 +22,13 @@ export const validation = async (
   );
 
   if (errors.length > 0) {
-    const message = errors.map(
-      (error: ValidationError) =>
-        error.constraints && Object.values(error.constraints)
-    );
+    const message = errors.map((error: ValidationError) => {
+      error.constraints && Object.values(error.constraints);
+    });
+
+    if (message.length === 1 && message[0] === undefined) {
+      return;
+    }
 
     throw new BadRequestError(
       ErrorCode.ValidationError,

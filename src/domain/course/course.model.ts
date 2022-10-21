@@ -101,4 +101,4 @@ const courseSchema: Schema = new Schema(
   }
 );
 
-export const userModel = model<ICourse & Document>("Course", courseSchema);
+export const courseModel = model<ICourse & Document>("Course", courseSchema);

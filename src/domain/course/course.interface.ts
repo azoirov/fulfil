@@ -6,7 +6,7 @@ export interface ICourse {
   features: string[];
   contents: string[];
   projects: IProject[];
-  comments: ICourseComment[];
+  comments?: ICourseComment[];
   audiances: string[];
   preferences: string[];
   faqs: IFaq[];
