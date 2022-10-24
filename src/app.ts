@@ -20,7 +20,7 @@ class App {
     this.initializeErrorHandling();
   }
 
-  public async connectToDatabase() {
+  private async connectToDatabase() {
     await connect(MONGO_URI);
 
     console.log(`=====================================`);
@@ -28,19 +28,19 @@ class App {
     console.log(`=====================================`);
   }
 
-  public initializeMiddlewares() {
+  private initializeMiddlewares() {
     this.app.use(cors());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
   }
 
-  public initializeRoutes(routes: IRoute[]) {
+  private initializeRoutes(routes: IRoute[]) {
     routes.forEach((route) => {
       this.app.use("/", route.router);
     });
   }
 
-  public initializeErrorHandling() {
+  private initializeErrorHandling() {
     this.app.use(errorResponder);
   }
 

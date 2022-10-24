@@ -7,10 +7,10 @@ class CourseRoute {
   public router = Router();
 
   constructor() {
-    this.initializaRoutes();
+    this.initializeRoutes();
   }
 
-  private initializaRoutes() {
+  private initializeRoutes() {
     this.router.post(`${this.path}/`, this.courseController.create);
     this.router.get(`${this.path}/`, this.courseController.getAll);
     this.router.get(`${this.path}/:slug`, this.courseController.getBySlug);
