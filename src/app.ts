@@ -5,6 +5,9 @@ import { IRoute } from "@/interfaces/route.interface";
 import { errorResponder } from "@middlewares/error.middleware";
 import "reflect-metadata";
 import cors from "cors";
+import swaggerJsDoc from "swagger-jsdoc";
+import swaggerUi from "swagger-ui-express";
+import docs from "@docs/index";
 
 class App {
   private app: express.Application;
@@ -18,6 +21,7 @@ class App {
     this.initializeRoutes(routes);
     this.connectToDatabase();
     this.initializeErrorHandling();
+    this.initializeSwagger();
   }
 
   private async connectToDatabase() {
@@ -42,6 +46,11 @@ class App {
 
   private initializeErrorHandling() {
     this.app.use(errorResponder);
+  }
+
+  private initializeSwagger() {
+    const swaggerDoc = swaggerJsDoc(docs);
+    this.app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDoc));
   }
 
   public run() {

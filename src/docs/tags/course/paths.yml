@@ -1,0 +1,18 @@
+/courses:
+  post:
+    summary: Create course
+    description: The endpoint to creating courses
+    operationId: createCourse
+    security:
+      - BearerAuth: []
+    tags:
+      - Course
+    requestBody:
+      $ref: "#components/requestBodies/CreateCourse"
+    responses:
+      201:
+        $ref: "#components/responses/CreateCourse"
+/courses/{slug}:
+  put:
+    parameters:
+      - $ref: "#components/parameters/Slug"

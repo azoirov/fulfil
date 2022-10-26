@@ -1,0 +1,55 @@
+components:
+  requestBodies:
+    CreateCourse:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - title
+              - excerpt
+              - features
+              - contents
+              - projects
+            properties:
+              title:
+                type: string
+              excerpt:
+                type: string
+              features:
+                type: array
+                items:
+                  type: string
+              contents:
+                type: array
+                items:
+                  type: string
+              projects:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - title
+                    - icon
+                  properties:
+                    icon:
+                      type: string
+                    title:
+                      type: string
+              audiances:
+                type: array
+                items:
+                  type: string
+              faqs:
+                type: array
+                items:
+                  type: object
+                  required:
+                    - question
+                    - answer
+                  properties:
+                    question:
+                      type: string
+                    answer:
+                      type: string

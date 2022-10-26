@@ -26,6 +26,7 @@
       "@controllers/*": ["controllers/*"],
       "@databases": ["databases"],
       "@dtos/*": ["dtos/*"],
+      "@docs/*": ["docs/*"],
       "@enums/*": ["enums/*"],
       "@errors/*": ["errors/*"],
       "@helpers/*": ["helpers/*"],

@@ -1,0 +1,9 @@
+components:
+  parameters:
+    Slug:
+      in: path
+      name: slug
+      schema:
+        type: string
+      required: true
+      description: Course slug

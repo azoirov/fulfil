@@ -1,0 +1,10 @@
+components:
+  responses:
+    CreateCourse:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string
