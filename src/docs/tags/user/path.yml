@@ -1,0 +1,195 @@
+/users/register:
+  post:
+    summary: Create new user
+    description: The endpoint to register new user
+    operationId: createUser
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    requestBody:
+      $ref: "#components/requestBodies/CreateUser"
+    responses:
+      201:
+        $ref: "#components/responses/CreateUser"
+
+/users/login:
+  post:
+    summary: login
+    description: The endpoint to login user
+    operationId: login
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    requestBody:
+      $ref: "#components/requestBodies/Login"
+    responses:
+      200:
+        $ref: "#components/responses/Login"
+
+/users/logout:
+  get:
+    summary: logout
+    description: The endpoint to logout user
+    operationId: logout
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    responses:
+      200:
+        $ref: "#components/responses/Logout"
+
+/users:
+  get: 
+    summary: get all users
+    description: The endpoint to receive users
+    operationId: getAllUsers
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    responses:
+      200:
+        $ref: "#components/responses/GetAllUsers"
+
+/users/{userId}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/UserId"
+    summary: get by userId
+    description: The endpoint to receive user by id
+    operationId: getUserById
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+    
+  put: 
+    parameters:
+      - $ref: "#components/parameters/UserId"
+    summary: upate by userId
+    description: The endpoint to upate user by id
+    operationId: updateUserById
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    requestBody:
+      $ref: "#components/requestBodies/UpdateUser"
+    responses:
+      201:
+        $ref: "#components/responses/UpdateUser"
+  
+  delete: 
+    parameters:
+      - $ref: "#components/parameters/UserId"
+    summary: delete by userId
+    description: The endpoint to delete user by id
+    operationId: deleteUserById
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+/users/{phone}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/Phone"
+    summary: get by phone
+    description: The endpoint to receive user by phone
+    operationId: getUserByPhone
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+    
+  put: 
+    parameters:
+      - $ref: "#components/parameters/Phone"
+    summary: upate by phone
+    description: The endpoint to upate user by phone
+    operationId: updateUserByPhone
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    requestBody:
+      $ref: "#components/requestBodies/UpdateUser"
+    responses:
+      201:
+        $ref: "#components/responses/UpdateUser"
+  
+  delete: 
+    parameters:
+      - $ref: "#components/parameters/Phone"
+    summary: delete by phone
+    description: The endpoint to delete user by phone
+    operationId: deleteUserByPhone
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+/users/{firstName}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/FirstName"
+    summary: get by firstName
+    description: The endpoint to receive user by firstName
+    operationId: getUserByFirstName
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+    
+  put:
+    parameters:
+      - $ref: "#components/parameters/FirstName" 
+    summary: upate by firstName
+    description: The endpoint to upate user by firstName
+    operationId: updateUserByFirstName
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    requestBody:
+      $ref: "#components/requestBodies/UpdateUser"
+    responses:
+      201:
+        $ref: "#components/responses/UpdateUser"
+  
+  delete: 
+    parameters:
+      - $ref: "#components/parameters/FirstName"
+    summary: delete by firstName
+    description: The endpoint to delete user by firstName
+    operationId: deleteUserByFirstName
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+
+
+
+

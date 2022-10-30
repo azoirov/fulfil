@@ -1,0 +1,65 @@
+components:
+  responses:
+    CreateUser:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string
+
+    UpdateUser:
+      content:
+        $ref: "#components/responses/CreateUser" 
+
+    Login:
+      content:
+        $ref: "#components/responses/CreateUser" 
+
+    Logout:
+      content:
+         $ref: "#components/responses/CreateUser"     
+
+    GetAllUsers:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      firstName:
+                        type: string
+                      lastName:
+                        type: string
+                      phone:
+                        type: string
+                      password:
+                        type: string
+                      role:
+                        type: string
+
+    GetOne:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              _id:
+                type: string
+              firstName:
+                type: string
+              lastName:
+                type: string
+              phone:
+                type: string
+              password:
+                type: string
+              role:
+                type: string

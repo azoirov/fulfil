@@ -1,0 +1,54 @@
+components:
+  requestBodies:
+    CreateUser:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - firstName
+              - lastName
+              - phone
+              - password
+            properties:
+              firstName:
+                type: string
+              lastName:
+                type: string
+              phone:
+                type: string
+              password:
+                type: string
+    
+    UpdateUser:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              firstName:
+                type: string
+              lastName:
+                type: string
+              phone:
+                type: string
+              password:
+                type: string
+
+    Login:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - phone
+              - password
+            properties:
+              phone:
+                type: string
+              password:
+                type: string
+                            
+                
