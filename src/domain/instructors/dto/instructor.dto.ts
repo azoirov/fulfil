@@ -45,3 +45,5 @@ export class InstructorDto {
   @IsString()
   readonly inFulfilSince: string;
 }
+
+export class CreateInstructorDto extends InstructorDto {}
