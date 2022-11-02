@@ -7,6 +7,8 @@ enum StatusCode {
     NotFound = 404,
     ValidationError = 422,
     ServerError = 500
+    SpNameMustBeUnique = "SP_NAME_MUST_BE_UNIQUE",
+    SpNotFound = "SP_NOT_FOUND",
 }
 
 export default StatusCode
