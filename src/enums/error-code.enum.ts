@@ -4,6 +4,8 @@ enum ErrorCode {
   CourseSlugMustBeUnique = "COURSE_SLUG_MUST_BE_UNIQUE",
   ServerError = "INTERNAL_SERVER_ERROR",
   CourseNotFound = "COURSE_NOT_FOUND",
+  SpNameMustBeUnique = "SP_NAME_MUST_BE_UNIQUE",
+  SpNotFound = "SP_NOT_FOUND",
 }
 
 export default ErrorCode;
