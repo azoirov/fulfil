@@ -12,7 +12,7 @@ class UserRepo {
     return this.userModel.findById(id);
   };
 
-  public getByPhone = async (phone: string): Promise<UserRepo> => {
+  public getByPhone = async (phone: string): Promise<UserDto> => {
     return this.userModel.findOne({ phone });
   };
 

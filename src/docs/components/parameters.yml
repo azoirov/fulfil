@@ -7,3 +7,38 @@ components:
         type: string
       required: true
       description: Course slug
+    Id:
+      in: path
+      name: id
+      schema:
+        type: string
+      required: true
+      description: Course id
+    Title:
+      in: path
+      name: title
+      schema:
+        type: string
+      required: true
+      description: Course title
+    UserId:
+      in: path
+      name: UserId
+      schema:
+        type: string
+      required: true
+      description: user id  
+    Phone:
+      in: path
+      name: phone
+      schema:
+        type: string
+      required: true
+      description: user phone
+    FirstName:
+      in: path
+      name: firstName
+      schema:
+        type: string
+      required: true
+      description: firstName

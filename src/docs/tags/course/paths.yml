@@ -12,7 +12,151 @@
     responses:
       201:
         $ref: "#components/responses/CreateCourse"
+
+  get: 
+    summary: get all course
+    description: The endpoint to receive courses
+    operationId: getAllCourse
+    security:
+      - BearerAuth: []
+    tags:
+      - Course
+    responses:
+      200:
+        $ref: "#components/responses/GetAllCourse"
+
+
 /courses/{slug}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/Slug"
+    summary: get course by slug
+    description: The endpoint to receive one course
+    operationId: getCourseBySlug
+    security:
+      - BearerAuth: []
+    tags:
+      - Course
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
   put:
     parameters:
       - $ref: "#components/parameters/Slug"
+    summary: update course by slug
+    description: The endpoint to upate courses by slug
+    operationId: updateCourseBySlug
+    security:
+      - BearerAuth: []
+    tags:
+      - Course
+    requestBody:
+      $ref: "#components/requestBodies/UpdateCourse"
+    responses:
+      200:
+        $ref: "#components/responses/UpdateCourse"
+
+  delete:
+    parameters:
+      - $ref: "#components/parameters/Slug"
+    summary: delete course by slug
+    description: The endpoint to delete courses by slug
+    operationId: deleteCourseBySlug
+    security:
+      - BearerAuth: []
+    tags:
+      - Course
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+/courses/{id}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: get course by id
+    description: The endpoint to receive course by id
+    operationId: getCourseById
+    security:
+      - BearerAuth: []
+    tags:
+      - Course
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+  put:
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: update course by ID
+    description: The endpoint to upate courses by id
+    operationId: updateCourseById
+    security:
+      - BearerAuth: []
+    tags:
+      - Course
+    requestBody:
+      $ref: "#components/requestBodies/UpdateCourse"
+    responses:
+      200:
+        $ref: "#components/responses/UpdateCourse"
+
+  delete: 
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: delete course by id
+    description: The endpoint to delete course by id
+    operationId: deleteCourseById
+    security:
+      - BearerAuth: []
+    tags:
+      - Course
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+
+/courses/{title}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/Title"
+    summary: get course by title
+    description: The endpoint to receive course by title
+    operationId: getCourseByTitle
+    security:
+      - BearerAuth: []
+    tags:
+      - Course
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+  put:
+    parameters:
+      - $ref: "#components/parameters/Title"
+    summary: update course by title
+    description: The endpoint to upate courses by title
+    operationId: updateCourseByTitle
+    security:
+      - BearerAuth: []
+    tags:
+      - Course
+    requestBody:
+      $ref: "#components/requestBodies/UpdateCourse"
+    responses:
+      200:
+        $ref: "#components/responses/UpdateCourse"
+  
+  delete: 
+    parameters:
+      - $ref: "#components/parameters/Title"
+    summary: delete course by title
+    description: The endpoint to delete course by title
+    operationId: deleteCourseByTitle
+    security:
+      - BearerAuth: []
+    tags:
+      - Course
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
