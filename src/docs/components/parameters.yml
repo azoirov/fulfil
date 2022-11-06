@@ -14,6 +14,13 @@ components:
         type: string
       required: true
       description: Course id
+    InstructorsId:
+      in: path
+      name: id
+      schema:
+        type: string
+      required: true
+      description: Instructor id
     Title:
       in: path
       name: title
