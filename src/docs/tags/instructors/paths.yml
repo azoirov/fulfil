@@ -1,0 +1,103 @@
+/instructors:
+  post:
+    summary: Create instructor
+    description: The endpoint to creating instructor
+    operationId: createInstructor
+    security:
+      - BearerAuth: []
+    tags:
+      - Instructors
+    requestBody:
+      $ref: "#components/requestBodies/CreateInstructor"
+    responses:
+      201:
+        $ref: "#components/responses/CreateInstructor"
+      400:
+        $ref: "#components/responses/Bad_Request"
+      500:
+        $ref: "#components/responses/Server_Error"
+
+  get: 
+    summary: get all instructors
+    description: The endpoint to receive instructors
+    operationId: getAllInstructors
+    security:
+      - BearerAuth: []
+    tags:
+      - Instructors
+    responses:
+      200:
+        $ref: "#components/responses/getAllInstructors"
+      400:
+        $ref: "#components/responses/Bad_Request"
+      500:
+        $ref: "#components/responses/Server_Error"
+  
+    
+ 
+
+/instructors/{id}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/InstructorsId"
+    summary: get instructor by id
+    description: The endpoint to receive instructor by id
+    operationId: getInstructorById
+    security:
+      - BearerAuth: []
+    tags:
+       - Instructors
+    responses:
+      200:
+        $ref: "#components/responses/GetOneInstructors"
+      400:
+        $ref: "#components/responses/Bad_Request"
+      404:
+        $ref: "#components/responses/Not_Found_Error"
+      500:
+        $ref: "#components/responses/Server_Error"
+
+  delete: 
+    parameters:
+      - $ref: "#components/parameters/InstructorsId"
+    summary: Delete instructor by id
+    description: The endpoint to receive instructor by id
+    operationId: DeleteInstructorById
+    security:
+      - BearerAuth: []
+    tags:
+       - Instructors
+    responses:
+      200:
+        $ref: "#components/responses/DeleteInstructor"
+      400:
+        $ref: "#components/responses/Bad_Request"
+      404:
+        $ref: "#components/responses/Not_Found_Error"
+      500:
+        $ref: "#components/responses/Server_Error"
+
+  put: 
+    parameters:
+      - $ref: "#components/parameters/InstructorsId"
+    summary: Update instructor by id
+    description: The endpoint to update instructor by id
+    operationId: UpdateInstructorById
+    security:
+      - BearerAuth: []
+    tags:
+       - Instructors
+    requestBody:
+      $ref: "#components/requestBodies/UpdateInstructor"
+    responses:
+      200:
+        $ref: "#components/responses/DeleteInstructor"
+      400:
+        $ref: "#components/responses/Bad_Request"
+      404:
+        $ref: "#components/responses/Not_Found_Error"
+      500:
+        $ref: "#components/responses/Server_Error"
+  
+
+

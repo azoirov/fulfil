@@ -1,0 +1,42 @@
+components:
+  requestBodies:
+    CreateInstructor:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - fullName
+              - speciality
+              - inFulfilSince
+              - about
+            properties:
+              fullName:
+                type: string
+              speciality:
+                type: string
+              inFulfilSince:
+                type: string
+              about:
+                type: array
+                items:
+                  type: string
+    
+    UpdateInstructor:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              fullName:
+                type: string
+              speciality:
+                type: string
+              inFulfilSince:
+                type: string
+              about:
+                type: array
+                items:
+                  type: string
+ 
