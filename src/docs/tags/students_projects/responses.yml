@@ -1,0 +1,61 @@
+components:
+  responses:
+    CreateSp:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string
+
+    UpdateSp:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string  
+
+    GetAllSp:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      sp_name:
+                         type: string
+                      student_name:
+                         type: string
+                      sp_number:
+                         type: string
+                      sp_image:
+                         type: string
+                      student_avatar:
+                         type: string
+
+    GetOne:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+                sp_name:
+                  type: string
+                student_name:
+                  type: string
+                sp_number:
+                  type: array
+                  items:
+                    type: string
+                sp_image:
+                  type: string
+                student_avatar:
+                  type: string
+                  

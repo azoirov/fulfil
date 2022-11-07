@@ -41,4 +41,11 @@ components:
       schema:
         type: string
       required: true
-      description: firstName
+      description: user firstName
+    Name:
+      in: path
+      name: Name
+      schema:
+        type: string
+      required: true
+      description: Student-Projects Name

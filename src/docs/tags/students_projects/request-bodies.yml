@@ -1,0 +1,42 @@
+components:
+  requestBodies:
+    CreateSp:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - sp_name
+              - student_name
+              - sp_number
+              - sp_image
+              - student_avatar
+            properties:
+              sp_name:
+                type: string
+              student_name:
+                type: string
+              sp_number:
+                type: string
+              sp_image:
+                type: string
+              student_avatar:
+                type: string
+                
+    UpdateSp:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+              sp_name:
+                type: string
+              student_name:
+                type: string
+              sp_number:
+                type: string
+              sp_image:
+                type: string
+              student_avatar:
+                type: string
