@@ -12,9 +12,6 @@ class InstructorRepo {
         return this.instructorModel.findById(id);
       };
 
-    getByfirstName = async (firstName: string): Promise<InstructorDto> => {
-        return this.instructorModel.findOne({firstName});
-    };
 
     getByPhone = async (phone: string): Promise<InstructorDto> => {
       return this.instructorModel.findOne({phone});

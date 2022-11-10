@@ -5,23 +5,24 @@ import { CreateInstructorDto, InstructorDto } from "./dto/instructor.dto";
 import InstructorRepo from "./instructor.repo";
 
 class InstructorService {
-    public InstructorRepo = new InstructorRepo()
+    public instructorRepo = new InstructorRepo()
 
     public create = async (data: CreateInstructorDto): Promise<InstructorDto> => {
-        const instructor = await this.InstructorRepo.getByPhone(data.phone)
+        const instructor = await this.instructorRepo.getByPhone(data.phone)
 
         if(instructor) throw new BadRequestError(ErrorCode.InstructorAlreadyExists)
 
-        return this.InstructorRepo.create(data)
+        return this.instructorRepo.create(data)
     }
 
     public getAll = async ():Promise<InstructorDto[]>  => {
-        const result = await this.InstructorRepo.getAll()
-        return result;
+        return this.instructorRepo.getAll();
+      
     }
 
     public getById = async (id: string):Promise<InstructorDto>  => {
-        const result = await this.InstructorRepo.getById(id)
+        const result = await this.instructorRepo.getById(id)
+        if(!result) throw new NotFoundError(ErrorCode.InstructorNotFound)
         return result;
     }
 
@@ -29,19 +30,18 @@ class InstructorService {
         id: string,
         updateData: Partial<InstructorDto>
       ): Promise<InstructorDto> => {
-        const instructor = await this.InstructorRepo.getById(id);
+        const instructor = await this.instructorRepo.getById(id);
         if (!instructor) throw new NotFoundError(ErrorCode.SpNotFound);
     
-        const result = await this.InstructorRepo.update(id, updateData);
-        return result;
+        return this.instructorRepo.update(id, updateData);
       };
 
     public deleteById = async (id: string): Promise<InstructorDto> => {
-        const instructor = await this.InstructorRepo.getById(id);
+        const instructor = await this.instructorRepo.getById(id);
         if (!instructor) throw new NotFoundError(ErrorCode.InstructorNotFound);
     
-        const result = await this.InstructorRepo.deleteById(id);
-        return result;
+        return this.instructorRepo.deleteById(id);
+       
       };
 }
 
