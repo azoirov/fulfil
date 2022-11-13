@@ -7,7 +7,10 @@ enum ErrorCode {
   CourseNotFound = "COURSE_NOT_FOUND",
   SpNameMustBeUnique = "SP_NAME_MUST_BE_UNIQUE",
   SpNotFound = "SP_NOT_FOUND",
-  InstructorNotFound = "INSTRUCTOR_NOT_FOUND"
+  InstructorNotFound = "INSTRUCTOR_NOT_FOUND",
+  StudentAlreadyExists = "STUDEBT_ALREADY_EXISTS",
+  StudentNotFound = "STUDENT_NOT_FOUND",
+
 }
 
 export default ErrorCode;

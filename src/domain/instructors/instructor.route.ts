@@ -3,7 +3,7 @@ import InstructorController from "./instructor.controller";
 
 class InstructorRoute {
   public path = `/instructors`;
-  public InstructorController = new InstructorController();
+  public instructorController = new InstructorController();
   public router = Router();
 
   constructor() {
@@ -11,11 +11,11 @@ class InstructorRoute {
   }
 
   private initializeRoutes() {
-    this.router.post(`${this.path}/`, this.InstructorController.create);
-    this.router.get(`${this.path}/`, this.InstructorController.getAll);
-    this.router.get(`${this.path}/:id`, this.InstructorController.getById);
-    this.router.delete(`${this.path}/:id`, this.InstructorController.delete);
-    this.router.put(`${this.path}/:id`, this.InstructorController.update);
+    this.router.post(`${this.path}/`, this.instructorController.create);
+    this.router.get(`${this.path}/`, this.instructorController.getAll);
+    this.router.get(`${this.path}/:id`, this.instructorController.getById);
+    this.router.delete(`${this.path}/:id`, this.instructorController.delete);
+    this.router.put(`${this.path}/:id`, this.instructorController.update);
   }
 }
 

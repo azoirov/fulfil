@@ -7,14 +7,14 @@ import InstructorService from "./instructor.service";
 
 
 class InstructorController {
-    public InstructorService = new InstructorService()
+    public instructorService = new InstructorService()
 
     public create = async (req: Request, res: Response, next: NextFunction) => {
         try{
             const createData: CreateInstructorDto = req.body;
             await validation(InstructorDto, createData);
 
-            const result = await this.InstructorService.create(createData);
+            const result = await this.instructorService.create(createData);
 
             res.status(StatusCode.Created).json({
                 data: result,
@@ -26,7 +26,7 @@ class InstructorController {
 
     public getAll = async (req: Request, res: Response, next: NextFunction) => {
         try {
-          const result = await this.InstructorService.getAll();
+          const result = await this.instructorService.getAll();
           res.status(StatusCode.Ok).json({
             data: result,
           });
@@ -37,7 +37,7 @@ class InstructorController {
 
       public getById = async (req: Request, res: Response, next: NextFunction) => {
         try {
-            const id: string = req.params.id;          const result = await this.InstructorService.getById(id);
+            const id: string = req.params.id;          const result = await this.instructorService.getById(id);
           res.status(StatusCode.Ok).json({
             data: result,
           });
@@ -54,7 +54,7 @@ class InstructorController {
           await validation(InstructorDto, updateData, true);
           await validation(IdDto, { id });
     
-          const result = await this.InstructorService.update(id, updateData);
+          const result = await this.instructorService.update(id, updateData);
     
           res.status(StatusCode.Ok).json({
             data: result,
@@ -69,7 +69,7 @@ class InstructorController {
           const id: string = req.params.id;
           await validation(IdDto, { id });
 
-          const result = await this.InstructorService.deleteById(id);
+          const result = await this.instructorService.deleteById(id);
     
           res.status(StatusCode.Ok).json({
             data: result,

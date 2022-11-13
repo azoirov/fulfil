@@ -5,8 +5,9 @@ enum StatusCode {
     Unauthorized = 401,
     Forbidden = 403,
     NotFound = 404,
+    ConflictError = 409,
     ValidationError = 422,
-    ServerError = 500
+    ServerError = 500,
 }
 
 export default StatusCode

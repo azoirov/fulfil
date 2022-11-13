@@ -1,5 +1,6 @@
 import ErrorCode from "@/enums/error-code.enum";
 import BadRequestError from "@/errors/bad-request.error";
+import ConflictError from "@/errors/conflict-error";
 import NotFoundError from "@/errors/not-found.error";
 import { CreateInstructorDto, InstructorDto } from "./dto/instructor.dto";
 import InstructorRepo from "./instructor.repo";
@@ -10,7 +11,7 @@ class InstructorService {
     public create = async (data: CreateInstructorDto): Promise<InstructorDto> => {
         const instructor = await this.instructorRepo.getByPhone(data.phone)
 
-        if(instructor) throw new BadRequestError(ErrorCode.InstructorAlreadyExists)
+        if(instructor) throw new ConflictError(ErrorCode.InstructorAlreadyExists)
 
         return this.instructorRepo.create(data)
     }
