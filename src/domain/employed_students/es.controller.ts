@@ -1,4 +1,3 @@
-import { IdDto } from "@/dtos/id.dto";
 import StatusCode from "@/enums/status-code.enum";
 import { validation } from "@/utils/validation";
 import { NextFunction, Request, Response } from "express";

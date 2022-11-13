@@ -1,5 +1,6 @@
 import ErrorCode from "@/enums/error-code.enum";
 import BadRequestError from "@/errors/bad-request.error";
+import ConflictError from "@/errors/conflict-error";
 import NotFoundError from "@/errors/not-found.error";
 import { CreateEmployedStudentsDto, EmployedStudentsDto } from "./dto/es.dto";
 import EmployedStudentsRepo from "./es.repo";
@@ -9,9 +10,9 @@ class EmployedStudensService {
     public employedStudentsRepo = new EmployedStudentsRepo()
 
     public create = async (data: CreateEmployedStudentsDto): Promise<EmployedStudentsDto> => {
-        const result = await this.employedStudentsRepo.getByFullName(data.fullName);
+        const student = await this.employedStudentsRepo.getByFullName(data.fullName);
 
-        if(result) throw new BadRequestError(ErrorCode.StudentAlreadyExists);
+        if(student) throw new ConflictError(ErrorCode.StudentAlreadyExists);
 
         return this.employedStudentsRepo.create(data);
     }
