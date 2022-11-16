@@ -1,0 +1,122 @@
+/student-projects:
+  post:
+    summary: Create Sp
+    description: The endpoint to creating Students-projects
+    operationId: createSp
+    security:
+      - BearerAuth: []
+    tags:
+      - Students-projects
+    requestBody:
+      $ref: "#components/requestBodies/CreateSp"
+    responses:
+      201:
+        $ref: "#components/responses/CreateSp"
+
+  get: 
+    summary: get all Students-projects
+    description: The endpoint to receive Students-projects
+    operationId: getAllSp
+    security:
+      - BearerAuth: []
+    tags:
+      - Students-projects
+    responses:
+      200:
+        $ref: "#components/responses/GetAllSp"
+
+
+/students-projects/{id}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: get Sp by id
+    description: The endpoint to receive one Students-projects
+    operationId: getSpById
+    security:
+      - BearerAuth: []
+    tags:
+      - Students-projects
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+  put:
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: update Students-projects by Id
+    description: The endpoint to upate Students-projects by Id
+    operationId: updateSpById
+    security:
+      - BearerAuth: []
+    tags:
+      - Students-projects
+    requestBody:
+      $ref: "#components/requestBodies/UpdateSp"
+    responses:
+      200:
+        $ref: "#components/responses/UpdateSp"
+
+  delete:
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: delete Students-projects by id
+    description: The endpoint to delete Students-projects by id
+    operationId: deleteSpById
+    security:
+      - BearerAuth: []
+    tags:
+      - Students-projects
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+
+/students-projects/{name}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/Name"
+    summary: get Sp by name
+    description: The endpoint to receive one Students-projects
+    operationId: getSpByName
+    security:
+      - BearerAuth: []
+    tags:
+      - Students-projects
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+  put:
+    parameters:
+      - $ref: "#components/parameters/Name"
+    summary: update Students-projects by name
+    description: The endpoint to upate Students-projects by name
+    operationId: updateSpByName
+    security:
+      - BearerAuth: []
+    tags:
+      - Students-projects
+    requestBody:
+      $ref: "#components/requestBodies/UpdateSp"
+    responses:
+      200:
+        $ref: "#components/responses/UpdateSp"
+
+  delete:
+    parameters:
+      - $ref: "#components/parameters/Name"
+    summary: delete Students-projects by name
+    description: The endpoint to delete Students-projects by name
+    operationId: deleteSpByName
+    security:
+      - BearerAuth: []
+    tags:
+      - Students-projects
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+
+
+
