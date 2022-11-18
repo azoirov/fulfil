@@ -8,8 +8,7 @@ const leadSchema: Schema = new Schema(
             required: true,
         },
         tg_username: {
-            type: String,
-            required: true,
+            type: String
         },
         phone: {
             type: String,
