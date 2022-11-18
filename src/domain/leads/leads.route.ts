@@ -3,7 +3,7 @@ import leadController from "./leads.controller";
 
 
 class leadRoute {
-  public path = `/students-projects`;
+  public path = `/leads`;
   public leadController = new leadController();
   public router = Router();
 
