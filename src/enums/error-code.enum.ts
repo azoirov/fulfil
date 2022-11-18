@@ -10,6 +10,7 @@ enum ErrorCode {
   InstructorNotFound = "INSTRUCTOR_NOT_FOUND",
   StudentAlreadyExists = "STUDEBT_ALREADY_EXISTS",
   StudentNotFound = "STUDENT_NOT_FOUND",
+  LeadNotFound = "LEAD_NOT_FOUND",
 
 }
 
