@@ -3,15 +3,16 @@ import StatusCode from "@/enums/status-code.enum";
 import { validation } from "@/utils/validation";
 import { NextFunction, Request, Response } from "express";
 import leadService from "./leads.service";
-import { CreateLeadDto, LeadDto } from "./dto/leads.dto";
+import {LeadDto } from "./dto/leads.dto";
+import {Ilead} from "./leads.interface";
 
 class leadController {
   public leadService = new leadService();
 
   public create = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const createData: CreateLeadDto = req.body;
-
+      const createData: Ilead = req.body;
+      
       await validation(LeadDto, createData);
 
       const result = await this.leadService.create(createData);
