@@ -1,15 +1,16 @@
-import { CreateLeadDto, LeadDto } from "./dto/leads.dto";
+import {LeadDto } from "./dto/leads.dto";
 import ErrorCode from "@/enums/error-code.enum";
 import BadRequestError from "@/errors/bad-request.error";
 import NotFoundError from "@/errors/not-found.error";
 import leadRepo from "./leads.repo";
+import {Ilead} from "./leads.interface";
 
 
 
 class leadService {
   public leadRepo = new leadRepo();
 
-  public create = async (data: CreateLeadDto): Promise<CreateLeadDto> => {
+  public create = async (data: Ilead): Promise<Ilead> => {
     const result = await this.leadRepo.create(data);
     return result;
   };
