@@ -1,7 +1,7 @@
 import { Type } from "class-transformer";
 import { IsArray, IsOptional, IsString, ValidateNested } from "class-validator";
 
-export class CreateLeadDto {
+export class LeadDto {
     @IsString()
     readonly full_name: string;
 
@@ -13,15 +13,4 @@ export class CreateLeadDto {
 
     @IsString()
     readonly course_id: string;
-}
-
-export class LeadDto extends CreateLeadDto {
-    @IsString()
-    readonly _id: string;
-
-    @IsString()
-    readonly createdAt: string;
-
-    @IsString()
-    readonly updatedAt: string;
 }
