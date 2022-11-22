@@ -10,7 +10,7 @@ class leadRepo {
     };
 
 
-    getAll = async (): Promise<LeadDto[]> => {
+    getAll = async (): Promise<Ilead[]> => {
         return this.leadModel.find().lean();
     };
 
