@@ -1,6 +1,6 @@
 import { IdDto } from "@/dtos/id.dto";
 import StatusCode from "@/enums/status-code.enum";
-import { validation } from "@/utils/validation";
+import { validationUtil } from "@utils/validation.util";
 import { NextFunction, Request, Response } from "express";
 import leadService from "./leads.service";
 import {LeadDto } from "./dto/leads.dto";
@@ -13,7 +13,7 @@ class leadController {
     try {
       const createData: Ilead = req.body;
       
-      await validation(LeadDto, createData);
+      await validationUtil(LeadDto, createData);
 
       const result = await this.leadService.create(createData);
 
@@ -41,7 +41,7 @@ class leadController {
   public delete = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const id: string = req.params.id;
-      await validation(IdDto, { id });
+      await validationUtil(IdDto, { id });
 
       const result = await this.leadService.deleteById(id);
 

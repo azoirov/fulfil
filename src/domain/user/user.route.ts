@@ -11,7 +11,6 @@ class UserRoute {
   }
 
   private initializeRoutes = () => {
-    this.router.post(`${this.path}/register`, this.userController.create);
   };
 }
 

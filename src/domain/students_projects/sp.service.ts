@@ -2,7 +2,7 @@ import { spDto } from "./dto/sp.dto";
 import ErrorCode from "@/enums/error-code.enum";
 import BadRequestError from "@/errors/bad-request.error";
 import NotFoundError from "@/errors/not-found.error";
-import { createSlug } from "@/utils/slug.service";
+import { createSlug } from "@services/slug.service";
 import spRepo from "./sp.repo";
 
 

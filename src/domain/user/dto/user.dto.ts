@@ -13,7 +13,7 @@ export class UserDto {
   readonly phone: string;
 
   @IsString()
-  readonly password: string;
+  password: string;
 }
 
 export class CreateUserDto extends UserDto {}

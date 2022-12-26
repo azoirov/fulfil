@@ -1,7 +1,7 @@
 import ErrorCode from "@/enums/error-code.enum";
 import BadRequestError from "@/errors/bad-request.error";
 import NotFoundError from "@/errors/not-found.error";
-import { createSlug } from "@/utils/slug.service";
+import { createSlug } from "@services/slug.service";
 import CourseRepo from "./course.repo";
 import { CourseDto } from "./dto/course.dto";
 

@@ -1,6 +1,6 @@
 import { IdDto } from "@/dtos/id.dto";
 import StatusCode from "@/enums/status-code.enum";
-import { validation } from "@/utils/validation";
+import { validationUtil } from "@utils/validation.util";
 import { NextFunction, Request, Response } from "express";
 import { InstructorDto, CreateInstructorDto } from "./dto/instructor.dto";
 import InstructorService from "./instructor.service";
@@ -12,7 +12,7 @@ class InstructorController {
     public create = async (req: Request, res: Response, next: NextFunction) => {
         try{
             const createData: CreateInstructorDto = req.body;
-            await validation(InstructorDto, createData);
+            await validationUtil(InstructorDto, createData);
 
             const result = await this.instructorService.create(createData);
 
@@ -51,8 +51,8 @@ class InstructorController {
           const id: string = req.params.id;
           const updateData: Partial<InstructorDto> = req.body;
     
-          await validation(InstructorDto, updateData, true);
-          await validation(IdDto, { id });
+          await validationUtil(InstructorDto, updateData, true);
+          await validationUtil(IdDto, { id });
     
           const result = await this.instructorService.update(id, updateData);
     
@@ -67,7 +67,7 @@ class InstructorController {
       public delete = async (req: Request, res: Response, next: NextFunction) => {
         try {
           const id: string = req.params.id;
-          await validation(IdDto, { id });
+          await validationUtil(IdDto, { id });
 
           const result = await this.instructorService.deleteById(id);
     

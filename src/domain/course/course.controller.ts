@@ -1,6 +1,6 @@
 import { IdDto } from "@/dtos/id.dto";
 import StatusCode from "@/enums/status-code.enum";
-import { validation } from "@/utils/validation";
+import { validationUtil } from "@utils/validation.util";
 import { NextFunction, Request, Response } from "express";
 import CourseService from "./course.service";
 import { CourseDto } from "./dto/course.dto";
@@ -12,7 +12,7 @@ class CourseController {
     try {
       const createData: CourseDto = req.body;
 
-      await validation(CourseDto, createData);
+      await validationUtil(CourseDto, createData);
 
       const result = await this.courseService.create(createData);
 
@@ -58,7 +58,7 @@ class CourseController {
     try {
       const id: string = req.params.id;
 
-      await validation(IdDto, { id });
+      await validationUtil(IdDto, { id });
 
       const result = await this.courseService.deleteById(id);
 
@@ -75,8 +75,8 @@ class CourseController {
       const id: string = req.params.id;
       const updateData: Partial<CourseDto> = req.body;
 
-      await validation(CourseDto, updateData, true);
-      await validation(IdDto, { id });
+      await validationUtil(CourseDto, updateData, true);
+      await validationUtil(IdDto, { id });
 
       const result = await this.courseService.update(id, updateData);
 

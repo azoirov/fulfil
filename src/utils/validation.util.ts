@@ -7,7 +7,7 @@ interface IValidatorOptions {
   skipMissingProperties: boolean;
 }
 
-export const validation = async (
+export const validationUtil = async (
   type: any,
   body: any,
   skipMissingProperties?: boolean

@@ -1,5 +1,5 @@
 import StatusCode from "@/enums/status-code.enum";
-import { validation } from "@/utils/validation";
+import { validationUtil } from "@utils/validation.util";
 import { NextFunction, Request, Response } from "express";
 import { CreateEmployedStudentsDto, EmployedStudentsDto } from "./dto/es.dto";
 import EmployedStudensService from "./es.service";
@@ -11,7 +11,7 @@ class EmployedStudentsController {
     public create = async (req: Request, res: Response, next: NextFunction) => {
         try{
             const createData: CreateEmployedStudentsDto = req.body;
-            await validation(EmployedStudentsDto, createData);
+            await validationUtil(EmployedStudentsDto, createData);
 
             const result = await this.employedStudensService.create(createData);
 
@@ -53,7 +53,7 @@ class EmployedStudentsController {
         try{
             const id: string = req.params.id
             const updateData: Partial<CreateEmployedStudentsDto> = req.body;
-            await validation(EmployedStudentsDto, updateData, true);
+            await validationUtil(EmployedStudentsDto, updateData, true);
 
             const result = await this.employedStudensService.update(id,updateData);
 

@@ -1,6 +1,6 @@
 import ErrorCode from "@/enums/error-code.enum";
 import BadRequestError from "@/errors/bad-request.error";
-import ConflictError from "@/errors/conflict-error";
+import ConflictError from "@errors/conflict.error";
 import NotFoundError from "@/errors/not-found.error";
 import { CreateEmployedStudentsDto, EmployedStudentsDto } from "./dto/es.dto";
 import EmployedStudentsRepo from "./es.repo";

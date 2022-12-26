@@ -1,6 +1,6 @@
 import { IdDto } from "@/dtos/id.dto";
 import StatusCode from "@/enums/status-code.enum";
-import { validation } from "@/utils/validation";
+import { validationUtil } from "@utils/validation.util";
 import { NextFunction, Request, Response } from "express";
 import SpService from "./sp.service";
 import { spDto } from "./dto/sp.dto";
@@ -12,7 +12,7 @@ class SpController {
     try {
       const createData: spDto = req.body;
 
-      await validation(spDto, createData);
+      await validationUtil(spDto, createData);
 
       const result = await this.spService.create(createData);
 
@@ -51,7 +51,7 @@ class SpController {
   public delete = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const id: string = req.params.id;
-      await validation(IdDto, { id });
+      await validationUtil(IdDto, { id });
 
       const result = await this.spService.deleteById(id);
 
@@ -69,8 +69,8 @@ class SpController {
       const id: string = req.params.id;
       const updateData: Partial<spDto> = req.body;
 
-      await validation(spDto, updateData, true);
-      await validation(IdDto, { id });
+      await validationUtil(spDto, updateData, true);
+      await validationUtil(IdDto, { id });
 
       const result = await this.spService.update(id, updateData);
 
