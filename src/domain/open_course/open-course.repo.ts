@@ -18,7 +18,7 @@ class OpenCourseRepo {
     });
   };
 
-  getByPage = async (page, limit): Promise<OpenCourseDto[]> => {
+  getAllWithPage = async (page: number, limit: number): Promise<OpenCourseDto[]> => {
     return this.openCourseModel.find().skip((page - 1) * 10).limit(limit)
   };
 

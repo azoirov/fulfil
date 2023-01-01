@@ -54,15 +54,16 @@ class OpenCourseController {
     }
   };
 
-  public getByPage = async (
+  public getAllWithPage = async (
     req: Request,
     res: Response,
     next: NextFunction
   ) => {
     try {
-      const { page, limit } = req.query;
+      const page: number = parseInt(req.query.page as any) || 1;
+      const limit: number = parseInt(req.query.limit as any) || 10;
 
-      const result = await this.openCourseService.getByPage(page.at, limit);
+      const result = await this.openCourseService.getAllWithPage(page, limit);
 
       res.status(StatusCode.Ok).json({
         data: result,

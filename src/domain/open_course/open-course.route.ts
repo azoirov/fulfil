@@ -12,10 +12,11 @@ class OpenCourseRoute {
 
   private initializeRoutes() {
     this.router.post(`${this.path}/`, this.openCourseController.create);
+    this.router.get(`${this.path}/`, this.openCourseController.getAllWithPage)
     this.router.get(`${this.path}/`, this.openCourseController.getAll);
     this.router.get(`${this.path}/:slug`, this.openCourseController.getBySlug);
     this.router.put(`${this.path}/:id`, this.openCourseController.update);
-    this.router.delete(`${this.path}/:id`, this.openCourseController.delete);
+    this.router.delete(`${this.path}/:id`, this.openCourseController.delete); 
   }
 }
 
