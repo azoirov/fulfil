@@ -1,0 +1,42 @@
+/users/auth/signup:
+  post:
+    summary: Create new user
+    description: The endpoint to register new user
+    operationId: createUser
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    requestBody:
+      $ref: "#components/requestBodies/CreateUser"
+    responses:
+      201:
+        $ref: "#components/responses/CreateUser"
+
+/users/auth/login:
+  post:
+    summary: login
+    description: The endpoint to login user
+    operationId: login
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    requestBody:
+      $ref: "#components/requestBodies/Login"
+    responses:
+      200:
+        $ref: "#components/responses/Login"
+
+/users/logout:
+  get:
+    summary: logout
+    description: The endpoint to logout user
+    operationId: logout
+    security:
+      - BearerAuth: []
+    tags:
+      - User
+    responses:
+      200:
+        $ref: "#components/responses/Logout"

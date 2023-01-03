@@ -1,0 +1,75 @@
+/employed-students:
+  post:
+    summary: Create employed-students
+    description: The endpoint to creating employed-students
+    operationId: createEmpStd
+    security:
+      - BearerAuth: []
+    tags:
+      - employed-students
+    requestBody:
+      $ref: "#components/requestBodies/CreateEmpStd"
+    responses:
+      201:
+        $ref: "#components/responses/CreateEmpStd"
+
+  get: 
+    summary: get all employed-students
+    description: The endpoint to receive employed-students
+    operationId: getAllEmpStd
+    security:
+      - BearerAuth: []
+    tags:
+      - employed-students
+    responses:
+      200:
+        $ref: "#components/responses/GetAllEmpStd"
+
+
+
+/employed-students/{id}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: get employed-students by id
+    description: The endpoint to receive employed-students by id
+    operationId: getEmpStdById
+    security:
+      - BearerAuth: []
+    tags:
+      - employed-students
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+  put:
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: update employed-students by ID
+    description: The endpoint to upate employed-students by id
+    operationId: updateEmpStdById
+    security:
+      - BearerAuth: []
+    tags:
+      - employed-students
+    requestBody:
+      $ref: "#components/requestBodies/UpdateEmpStd"
+    responses:
+      200:
+        $ref: "#components/responses/UpdateEmpStd"
+
+  delete: 
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: delete employed-students by id
+    description: The endpoint to delete employed-students by id
+    operationId: deleteEmpStdById
+    security:
+      - BearerAuth: []
+    tags:
+      - employed-students
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+

@@ -14,7 +14,7 @@ enum ErrorCode {
   LeadNotFound = "LEAD_NOT_FOUND",
   UserNotFound = "USER_NOT_FOUND",
   InvalidCredentials = "INVALID_CREDENTIALS",
-  Forbidden = "FORBIDDEN"
+  AccessDenied = "ACCESS_DENIED"
 }
 
 export default ErrorCode;

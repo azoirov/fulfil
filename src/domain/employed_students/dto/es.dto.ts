@@ -10,6 +10,9 @@ export class EmployedStudentsDto {
   @IsString()
   readonly speciality: string;
 
+  @IsString()
+  readonly feedback: string;
+
   
 }
 

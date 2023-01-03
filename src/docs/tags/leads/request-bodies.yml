@@ -1,0 +1,23 @@
+components:
+  requestBodies:
+    CreateLeads:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - full_name
+              - tg_username
+              - phone
+              - course_id
+            properties:
+                      full_name:
+                         type: string
+                      tg_username:
+                         type: string
+                      phone:
+                         type: string
+                      course_id:
+                         type: string
+                

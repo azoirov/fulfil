@@ -1,0 +1,46 @@
+/leads:
+  post:
+    summary: Create Leads
+    description: The endpoint to creating Leads
+    operationId: createLeads
+    security:
+      - BearerAuth: []
+    tags:
+      - Leads
+    requestBody:
+      $ref: "#components/requestBodies/CreateLeads"
+    responses:
+      201:
+        $ref: "#components/responses/CreateLeads"
+
+  get: 
+    summary: get all Leads
+    description: The endpoint to receive Leads
+    operationId: getAllLeads
+    security:
+      - BearerAuth: []
+    tags:
+      - Leads
+    responses:
+      200:
+        $ref: "#components/responses/GetAllLeads"
+
+
+/Leads/{id}:
+  delete:
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: delete Leads by id
+    description: The endpoint to delete Leads by id
+    operationId: deleteLeadsById
+    security:
+      - BearerAuth: []
+    tags:
+      - Leads
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+
+
+

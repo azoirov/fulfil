@@ -11,8 +11,9 @@ export class CreateOpenCourseDto {
   @IsString()
   readonly duration: string;
 
-  @IsString()
+  @IsString() 
   readonly link: string;
+
   @IsOptional()
   @IsString()
   slug?: string;

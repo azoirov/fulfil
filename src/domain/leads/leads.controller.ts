@@ -2,12 +2,12 @@ import { IdDto } from "@/dtos/id.dto";
 import StatusCode from "@/enums/status-code.enum";
 import { validationUtil } from "@utils/validation.util";
 import { NextFunction, Request, Response } from "express";
-import leadService from "./leads.service";
+import LeadService from "./leads.service";
 import {LeadDto } from "./dto/leads.dto";
 import {Ilead} from "./leads.interface";
 
 class leadController {
-  public leadService = new leadService();
+  public leadService = new LeadService();
 
   public create = async (req: Request, res: Response, next: NextFunction) => {
     try {

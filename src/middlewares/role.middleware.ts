@@ -8,7 +8,7 @@ export const checkRole = (userRole: UserRole) => {
     return async (req: IRequest, res: Response, next: NextFunction) => {
         try {
             const isAllowed = req.user.role === userRole;
-            if (!isAllowed) throw new ForbiddenError(ErrorCode.Forbidden)
+            if (!isAllowed) throw new ForbiddenError(ErrorCode.AccessDenied)
 
             next()
         } catch (error) {

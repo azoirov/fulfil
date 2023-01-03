@@ -1,6 +1,6 @@
 import { IdDto } from "@/dtos/id.dto";
 import StatusCode from "@/enums/status-code.enum";
-import { validation } from "@/utils/validation";
+import { validationUtil } from "@/utils/validation.util";
 import { NextFunction, Request, Response } from "express";
 import { CreateOpenCourseDto } from "./dto/open-course.dto";
 import OpenCourseService from "./open-course.service";
@@ -12,7 +12,7 @@ class OpenCourseController {
     try {
       const createData: CreateOpenCourseDto = req.body;
 
-      await validation(CreateOpenCourseDto, createData);
+      await validationUtil(CreateOpenCourseDto, createData);
 
       const result = await this.openCourseService.create(createData);
 
@@ -54,15 +54,16 @@ class OpenCourseController {
     }
   };
 
-  public getByPage = async (
+  public getAllWithPage = async (
     req: Request,
     res: Response,
     next: NextFunction
   ) => {
     try {
-      const { page, limit } = req.query;
+      const page: number = parseInt(req.query.page as any) || 1;
+      const limit: number = parseInt(req.query.limit as any) || 10;
 
-      const result = await this.openCourseService.getByPage(page.at, limit);
+      const result = await this.openCourseService.getAllWithPage(page, limit);
 
       res.status(StatusCode.Ok).json({
         data: result,
@@ -76,7 +77,7 @@ class OpenCourseController {
     try {
       const id: string = req.params.id;
 
-      await validation(IdDto, { id });
+      await validationUtil(IdDto, { id });
 
       const result = await this.openCourseService.deleteById(id);
 
@@ -93,8 +94,8 @@ class OpenCourseController {
       const id: string = req.params.id;
       const updateData: Partial<CreateOpenCourseDto> = req.body;
 
-      await validation(CreateOpenCourseDto, updateData, true);
-      await validation(IdDto, { id });
+      await validationUtil(CreateOpenCourseDto, updateData, true);
+      await validationUtil(IdDto, { id });
 
       const result = await this.openCourseService.update(id, updateData);
 

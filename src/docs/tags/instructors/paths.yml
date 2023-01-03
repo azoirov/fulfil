@@ -1,0 +1,122 @@
+/instructors:
+  post:
+    summary: Create Instructors
+    description: The endpoint to creating Instructors
+    operationId: createInstructors
+    security:
+      - BearerAuth: []
+    tags:
+      - Instructors
+    requestBody:
+      $ref: "#components/requestBodies/CreateInstructors"
+    responses:
+      201:
+        $ref: "#components/responses/CreateInstructors"
+
+  get: 
+    summary: get all Instructors
+    description: The endpoint to receive Instructors
+    operationId: getAllInstructors
+    security:
+      - BearerAuth: []
+    tags:
+      - Instructors
+    responses:
+      200:
+        $ref: "#components/responses/GetAllInstructors"
+
+
+/instructors/{id}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: get Instructors by id
+    description: The endpoint to receive one Instructors
+    operationId: getInstructorsById
+    security:
+      - BearerAuth: []
+    tags:
+      - Instructors
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+  put:
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: update Instructors by Id
+    description: The endpoint to upate Instructors by Id
+    operationId: updateInstructorsById
+    security:
+      - BearerAuth: []
+    tags:
+      - Instructors
+    requestBody:
+      $ref: "#components/requestBodies/UpdateInstructors"
+    responses:
+      200:
+        $ref: "#components/responses/UpdateInstructors"
+
+  delete:
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: delete Instructors by id
+    description: The endpoint to delete Instructors by id
+    operationId: deleteInstructorsById
+    security:
+      - BearerAuth: []
+    tags:
+      - Instructors
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+
+/instructors/{name}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/Name"
+    summary: get Instructors by name
+    description: The endpoint to receive one Instructors
+    operationId: getInstructorsByName
+    security:
+      - BearerAuth: []
+    tags:
+      - Instructors
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+  put:
+    parameters:
+      - $ref: "#components/parameters/Name"
+    summary: update Instructors by name
+    description: The endpoint to upate Instructors by name
+    operationId: updateInstructorsByName
+    security:
+      - BearerAuth: []
+    tags:
+      - Instructors
+    requestBody:
+      $ref: "#components/requestBodies/UpdateInstructors"
+    responses:
+      200:
+        $ref: "#components/responses/UpdateInstructors"
+
+  delete:
+    parameters:
+      - $ref: "#components/parameters/Name"
+    summary: delete Instructors by name
+    description: The endpoint to delete Instructors by name
+    operationId: deleteInstructorsByName
+    security:
+      - BearerAuth: []
+    tags:
+      - Instructors
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+
+
+

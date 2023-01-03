@@ -1,0 +1,60 @@
+components:
+  requestBodies:
+    CreateOpenCourse:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - title
+              - cover_img
+              - duration
+              - link
+              - instructor_name
+              - instructor_avatar
+              - subjects
+            properties:
+                      title:
+                         type: string
+                      cover_img:
+                         type: string
+                      duration:
+                         type: string
+                      link:
+                         type: string
+                      slug:
+                         type: string
+                      instructor_name:
+                         type: string
+                      instructor_avatar:
+                         type: string
+                      subjects:
+                         type: array
+                         items:
+                            type: string
+                
+    UpdateOpenCourse:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                      title:
+                         type: string
+                      cover_img:
+                         type: string
+                      duration:
+                         type: string
+                      link:
+                         type: string
+                      slug:
+                         type: string
+                      instructor_name:
+                         type: string
+                      instructor_avatar:
+                         type: string
+                      subjects:
+                         type: array
+                         items:
+                            type: string
