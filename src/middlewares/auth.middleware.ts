@@ -8,7 +8,7 @@ import {IRequest} from "@interfaces/request.interface";
 export const checkToken = (req: IRequest, res: Response, next: NextFunction) => {
     const jwtService = new JwtService();
 
-    const token: string = req.headers['authorization'];
+    const token: string = req.header('Authorization').split('Bearer ')[1];
     if(!token) throw new UnauthorizedError(ErrorCode.TokenDoesNotExist)
 
     const payload: IPayload = jwtService.verifyToken(token);

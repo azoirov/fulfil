@@ -1,0 +1,57 @@
+components:
+  responses:
+    CreateEmpStd:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string
+
+    UpdateEmpStd:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string  
+
+    GetAllEmpStd:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      fullName:
+                         type: string
+                      avatar:
+                         type: string
+                      speciality:
+                         type: string
+                      feedback:
+                         type: string
+                         
+                      
+
+    GetOne:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+                fullName:
+                  type: string
+                avatar:
+                  type: string
+                speciality:
+                  type: status
+                feedback:
+                  type: string
+                  

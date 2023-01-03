@@ -1,0 +1,85 @@
+components:
+  requestBodies:
+    CreateInstructors:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - firstName
+              - lastName
+              - about
+              - speciality
+              - experience
+              - studyAt
+              - workedAt
+              - inFulfilSince
+            properties:
+                      firstName:
+                         type: string
+                      lastName:
+                         type: string
+                      avatar:
+                         type: string
+                      phone:
+                         type: string
+                      about:
+                         type: array
+                         items:
+                            type: string
+                      speciality:
+                         type: array
+                         items:
+                            type: string
+                      experience:
+                         type: string
+                      intExperience:
+                         type: string
+                      studyAt:
+                         type: array
+                         items:
+                            type: string
+                      workedAt:
+                         type: array
+                         items:
+                            type: string
+                      inFulfilSince:
+                         type: string
+                
+    UpdateInstructors:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                      firstName:
+                         type: string
+                      lastName:
+                         type: string
+                      avatar:
+                         type: string
+                      phone:
+                         type: string
+                      about:
+                         type: array
+                         items:
+                            type: string
+                      speciality:
+                         type: array
+                         items:
+                            type: string
+                      experience:
+                         type: string
+                      intExperience:
+                         type: string
+                      studyAt:
+                         type: array
+                         items:
+                            type: string
+                      workedAt:
+                         type: array
+                         items:
+                            type: string
+                      inFulfilSince:
+                         type: string

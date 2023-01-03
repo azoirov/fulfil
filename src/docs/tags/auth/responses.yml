@@ -1,0 +1,20 @@
+components:
+  responses:
+    CreateUser:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string
+ 
+    Login:
+      content:
+        $ref: "#components/responses/CreateUser" 
+
+    Logout:
+      content:
+         $ref: "#components/responses/CreateUser"     
+
+    

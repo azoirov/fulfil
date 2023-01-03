@@ -1,0 +1,32 @@
+components:
+  responses:
+    CreateLeads:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string
+ 
+
+    GetAllLeads:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      full_name:
+                         type: string
+                      tg_username:
+                         type: string
+                      phone:
+                         type: string
+                      course_id:
+                         type: string
+              

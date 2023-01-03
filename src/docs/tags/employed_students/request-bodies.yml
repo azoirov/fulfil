@@ -1,0 +1,35 @@
+components:
+  requestBodies:
+    CreateEmpStd:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              fullName:
+                type: string
+              avatar:
+                type: string
+              speciality:
+                type: string
+              feedback:
+                type: string
+              
+                
+    UpdateEmpStd:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fullName:
+                  type: string
+                avatar:
+                  type: string
+                speciality:
+                  type: string
+                feedback:
+                  type: string
+                
+                

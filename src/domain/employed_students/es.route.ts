@@ -1,4 +1,7 @@
+import { checkToken } from "@/middlewares/auth.middleware";
+import { checkRole } from "@/middlewares/role.middleware";
 import { Router } from "express";
+import { UserRole } from "../user/user.enum";
 import EmployedStudentsController from "./es.controller";
 
 class EmployedStudentsRoute {
@@ -11,11 +14,11 @@ class EmployedStudentsRoute {
   }
 
   private initializeRoutes() {
-    this.router.post(`${this.path}/`, this.employedStudensController.create);
+    this.router.post(`${this.path}/`, checkToken, checkRole(UserRole.Admin), this.employedStudensController.create);
     this.router.get(`${this.path}/`, this.employedStudensController.getAll);
     this.router.get(`${this.path}/:id`, this.employedStudensController.getById);
-    this.router.delete(`${this.path}/:id`, this.employedStudensController.delete);
-    this.router.put(`${this.path}/:id`, this.employedStudensController.update);
+    this.router.delete(`${this.path}/:id`, checkToken, checkRole(UserRole.Admin), this.employedStudensController.delete);
+    this.router.put(`${this.path}/:id`, checkToken, checkRole(UserRole.Admin), this.employedStudensController.update);
   }
 }
 

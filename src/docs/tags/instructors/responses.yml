@@ -1,0 +1,101 @@
+components:
+  responses:
+    CreateInstructors:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string
+
+    UpdateInstructors:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string  
+
+    GetAllInstructors:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      firstName:
+                         type: string
+                      lastName:
+                         type: string
+                      avatar:
+                         type: string
+                      phone:
+                         type: string
+                      about:
+                         type: array
+                         items:
+                            type: string
+                      speciality:
+                         type: array
+                         items:
+                            type: string
+                      experience:
+                         type: string
+                      intExperience:
+                         type: string
+                      studyAt:
+                         type: array
+                         items:
+                            type: string
+                      workedAt:
+                         type: array
+                         items:
+                            type: string
+                      inFulfilSince:
+                         type: string
+                         
+                      
+
+    GetOne:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+                      firstName:
+                         type: string
+                      lastName:
+                         type: string
+                      avatar:
+                         type: string
+                      phone:
+                         type: string
+                      about:
+                         type: array
+                         items:
+                            type: string
+                      speciality:
+                         type: array
+                         items:
+                            type: string
+                      experience:
+                         type: string
+                      intExperience:
+                         type: string
+                      studyAt:
+                         type: array
+                         items:
+                            type: string
+                      workedAt:
+                         type: array
+                         items:
+                            type: string
+                      inFulfilSince:
+                         type: string
+                  

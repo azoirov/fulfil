@@ -1,5 +1,5 @@
 import { Type } from "class-transformer";
-import { IsArray, IsOptional, IsString, ValidateNested } from "class-validator";
+import {IsString } from "class-validator";
 
 export class LeadDto {
     @IsString()

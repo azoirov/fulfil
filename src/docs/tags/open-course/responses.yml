@@ -1,0 +1,77 @@
+components:
+  responses:
+    CreateOpenCourse:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string
+
+    UpdateOpenCourse:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              ok:
+                type: string  
+
+    GetAllOpenCourse:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              data:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      title:
+                         type: string
+                      cover_img:
+                         type: string
+                      duration:
+                         type: string
+                      link:
+                         type: string
+                      slug:
+                         type: string
+                      instructor_name:
+                         type: string
+                      instructor_avatar:
+                         type: string
+                      subjects:
+                         type: array
+                         items:
+                            type: string
+                         
+                      
+
+    GetOne:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+                      title:
+                         type: string
+                      cover_img:
+                         type: string
+                      duration:
+                         type: string
+                      link:
+                         type: string
+                      slug:
+                         type: string
+                      instructor_name:
+                         type: string
+                      instructor_avatar:
+                         type: string
+                      subjects:
+                         type: array
+                         items:
+                            type: string
+                  

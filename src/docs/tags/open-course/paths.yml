@@ -1,0 +1,88 @@
+/open-course:
+  post:
+    summary: Create Open-course
+    description: The endpoint to creating Open-course
+    operationId: createOpenCourse
+    security:
+      - BearerAuth: []
+    tags:
+      - Open-course
+    requestBody:
+      $ref: "#components/requestBodies/CreateOpenCourse"
+    responses:
+      201:
+        $ref: "#components/responses/CreateOpenCourse"
+
+  get: 
+    summary: get all Open-course
+    description: The endpoint to receive Open-course
+    operationId: getAllOpenCourse
+    security:
+      - BearerAuth: []
+    tags:
+      - Open-course
+    responses:
+      200:
+        $ref: "#components/responses/GetAllOpenCourse"
+
+
+/Open-course/{id}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: get Sp by id
+    description: The endpoint to receive one Open-course
+    operationId: getOpenCourseById
+    security:
+      - BearerAuth: []
+    tags:
+      - Open-course
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+  put:
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: update Open-course by Id
+    description: The endpoint to upate Open-course by Id
+    operationId: updateOpenCourseById
+    security:
+      - BearerAuth: []
+    tags:
+      - Open-course
+    requestBody:
+      $ref: "#components/requestBodies/UpdateOpenCourse"
+    responses:
+      200:
+        $ref: "#components/responses/UpdateOpenCourse"
+
+  delete:
+    parameters:
+      - $ref: "#components/parameters/Id"
+    summary: delete Open-course by id
+    description: The endpoint to delete Open-course by id
+    operationId: deleteOpenCourseById
+    security:
+      - BearerAuth: []
+    tags:
+      - Open-course
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"
+
+
+/Open-course/{slug}:
+  get: 
+    parameters:
+      - $ref: "#components/parameters/Slug"
+    summary: get Open-course by slug
+    description: The endpoint to receive one Open-course
+    operationId: getOpenCourseBySlug
+    security:
+      - BearerAuth: []
+    tags:
+      - Open-course
+    responses:
+      200:
+        $ref: "#components/responses/GetOne"

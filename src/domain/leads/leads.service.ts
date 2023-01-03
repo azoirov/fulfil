@@ -7,7 +7,7 @@ import {Ilead} from "./leads.interface";
 
 
 
-class leadService {
+class LeadService {
   public leadRepo = new leadRepo();
 
   public create = async (data: Ilead): Promise<Ilead> => {
@@ -31,4 +31,4 @@ class leadService {
 
 }
 
-export default leadService;
+export default LeadService;

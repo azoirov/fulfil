@@ -17,7 +17,7 @@ class LeadRoute {
   private initializeRoutes() {
     this.router.post(`${this.path}/`, this.leadController.create);
     this.router.get(`${this.path}/`, checkToken, checkRole(UserRole.Admin), this.leadController.getAll);
-    this.router.delete(`${this.path}/:id`, this.leadController.delete);
+    this.router.delete(`${this.path}/:id`, checkToken, checkRole(UserRole.Admin), this.leadController.delete);
   }
 }
 

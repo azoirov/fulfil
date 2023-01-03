@@ -15,6 +15,10 @@ const employedStudentsSchema: Schema = new Schema(
    speciality: {
     required: true,
     type: String,
+   },
+   feedback: {
+    required: true,
+    type: String,
    }
 }, {
     timestamps: true,
